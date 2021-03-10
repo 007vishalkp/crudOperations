@@ -15,17 +15,17 @@ import io.cucumber.testng.CucumberOptions;
 //        outputFolder = "target/81",
 //        retryCount = 3
 //)
-@CucumberOptions(
-        //mvn clean -D'cucumber.options=--glue Steps' -DargLine='-Dplatform="web"' test //for web app
-        //mvn clean -D'cucumber.options=--glue Steps_Android' -DargLine='-Dplatform="android"' test //for android app
-        features = {"src/features/"},
-        glue = "steps",
-        plugin = {"json:target/cucumber-report/cucumber.json"},
-        monochrome = true,
-
-        tags = ""
-
-)
+//@CucumberOptions(
+//        //mvn clean -D'cucumber.options=--glue Steps' -DargLine='-Dplatform="web"' test //for web app
+//        //mvn clean -D'cucumber.options=--glue Steps_Android' -DargLine='-Dplatform="android"' test //for android app
+//        features = {"src/features/"},
+//        glue = "steps",
+//        plugin = {"json:target/cucumber-report/cucumber.json"},
+//        monochrome = true,
+//
+//        tags = ""
+//
+//)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
