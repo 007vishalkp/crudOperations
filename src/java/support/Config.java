@@ -1,21 +1,23 @@
 package support;
 
-import java.util.Random;
+import net.minidev.json.parser.ParseException;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Config {
-    public static final int SIGNUP_EMAIL_LENGTH = 9;
 
+    public static String getJson(String filename) throws Exception {
+        String file = System.getProperty("user.dir") + "/src/resources/" + filename + ".json";
+        return readFileAsString(file);
+    }
 
-    public static String randomEmail(int EmailLength) {
-        String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder character = new StringBuilder();
-        Random rnd = new Random();
-        while (character.length() < EmailLength) { // length of the random string.
-            int index = (int) (rnd.nextFloat() * chars.length());
-            character.append(chars.charAt(index));
-        }
-        String email = character.toString();
-        return "random_" + email + "@yopmail.com";
+    public static String readFileAsString(String file) throws Exception {
+        return new String(Files.readAllBytes(Paths.get(file)));
     }
 
 }
