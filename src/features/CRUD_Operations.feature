@@ -28,8 +28,8 @@ Feature: CRUD operations
     Then We can access the details of the <record> successfully
     Examples:
       | record |
-      | 10     |
-      | 1      |
+      | 9      |
+      | 2      |
 
   @deleteapicall
   Scenario Outline: Deleting a particular record from the database
@@ -37,5 +37,5 @@ Feature: CRUD operations
     Then We can delete the <record> successfully
     Examples:
       | record |
-      | 10     |
-      | 1      |
+      | 5      |
+      | 7      |
