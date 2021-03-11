@@ -1,6 +1,8 @@
+@CRUDoperations
 Feature: CRUD operations
   This feature will help users to understand the CRUD operations of api.
 
+  @postapicall
   Scenario Outline: Creating a new record in the database
     Given We have the "<api>" url
     When A record is created "<status>"
@@ -10,6 +12,7 @@ Feature: CRUD operations
       | POST | successful   | 201  |
       | POST | unsuccessful | 500  |
 
+  @patchapicall
   Scenario Outline: Updating an existing record in the database.
     Given We have the "<api>" url
     When A <record> is updated "<status>"
@@ -19,6 +22,7 @@ Feature: CRUD operations
       | PATCH | successful   | 200  | 10     |
       | PATCH | unsuccessful | 500  | 2      |
 
+  @getapicall
   Scenario Outline: Accessing the details from the database, of a particular record.
     Given We have the "GET" url
     Then We can access the details of the <record> successfully
@@ -27,6 +31,7 @@ Feature: CRUD operations
       | 10     |
       | 1      |
 
+  @deleteapicall
   Scenario Outline: Deleting a particular record from the database
     Given We have the "DELETE" url
     Then We can delete the <record> successfully

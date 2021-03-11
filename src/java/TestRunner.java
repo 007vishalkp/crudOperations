@@ -23,7 +23,7 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"json:target/cucumber-report/cucumber.json"},
         monochrome = true,
 
-        tags = ""
+        tags = "@CRUDoperations"
 
 )
 
