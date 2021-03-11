@@ -13,7 +13,10 @@ public class Config {
 
     public static String getJson(String filename) throws Exception {
         String file = System.getProperty("user.dir") + "/src/resources/" + filename + ".json";
-        return readFileAsString(file);
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(file));
+        JSONObject jsonObject = (JSONObject) obj;
+        return jsonObject.toJSONString();
     }
 
     public static String readFileAsString(String file) throws Exception {

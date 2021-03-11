@@ -8,16 +8,16 @@ Feature: CRUD operations
     Examples:
       | api  | status       | code |
       | POST | successful   | 201  |
-      | POST | unsuccessful | 500  |
+#      | POST | unsuccessful | 500  | #No failure scenario since api is accepting null value.
 
   Scenario Outline: Updating an existing record in the database.
     Given We have the "<api>" url
     When A <record> is updated "<status>"
     Then The response <code> is shown
     Examples:
-      | api   | status       | code | record |
-      | PATCH | successful   | 200  | 10     |
-      | PATCH | unsuccessful | 500  | 2      |
+      | api | status       | code | record |
+      | PUT | successful   | 200  | 10     |
+      | PUT | unsuccessful | 500  | 400    |
 
   Scenario Outline: Accessing the details from the database, of a particular record.
     Given We have the "GET" url

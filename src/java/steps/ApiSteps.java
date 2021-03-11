@@ -51,9 +51,9 @@ public class ApiSteps {
     @When("A {int} is updated {string}")
     public void aRecordIsUpdated(int id, String status) throws Exception {
         if (status.contains("unsuccess")) {
-            responseStatus = apiMethods.patchMethodCall(apiURL + id, Config.getJson("failure"));
+            responseStatus = apiMethods.putMethodCall(apiURL + id, Config.getJson("failure"));
         } else if (status.contains("success")) {
-            responseStatus = apiMethods.patchMethodCall(apiURL + id, Config.getJson("update"));
+            responseStatus = apiMethods.putMethodCall(apiURL + id, Config.getJson("update"));
         } else {
             Assert.fail();
         }
