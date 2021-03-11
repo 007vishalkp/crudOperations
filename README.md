@@ -13,9 +13,9 @@ Prerequisite:
 Process:
 - Once the project is cloned, you can run the mvn command
 - To run all the CRUD operations use this command, "mvn test -Dcucumber.options="--tag @CRUDoperations"
-- To run only POST method "mvn test -Dcucumber.options="--tag @postapicall"
-- To run only GET method "mvn test -Dcucumber.options="--tag @getapicall"
-- To run only PUT method "mvn test -Dcucumber.options="--tag @putapicall"
+- To run only POST method "mvn test -Dcucumber.options="--tag @createapicall"
+- To run only GET method "mvn test -Dcucumber.options="--tag @readapicall"
+- To run only PUT method "mvn test -Dcucumber.options="--tag @updateapicall"
 - To run only DELETE method "mvn test -Dcucumber.options="--tag @deleteapicall"
 - If you run only "mvn clean test" then it will by default run all the scenarios.
 
