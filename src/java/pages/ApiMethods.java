@@ -20,6 +20,13 @@ public class ApiMethods {
     private int user_quiz_id = 0;
     private String authBearerToken = "";
 
+    /**
+     * The GET method call, calls the api and returns the status code.
+     *
+     * @param api
+     * @return
+     * @throws IOException
+     */
     public int getMethodCall(String api) throws IOException {
         int responseCode;
         String responseMessage = "", responseMethod = "";
@@ -46,8 +53,8 @@ public class ApiMethods {
             }
             in.close();
             // print result
-            System.out.println("GET Response Code = " + responseCode);
-            System.out.println("GET Response message = " + responseMessage);
+            System.out.println("GET Response Code: " + responseCode);
+            System.out.println("GET Response message: " + responseMessage);
             System.out.println("Response-->" + response.toString());
         } else {
             System.out.println("GET request failed-->" + responseCode + "GET Response Message = " + responseMessage + ", GET Response Method = " + responseMethod);
@@ -55,6 +62,14 @@ public class ApiMethods {
         return responseCode;
     }
 
+    /**
+     * The POST method call, calls the api and returns the status code.
+     *
+     * @param api
+     * @param jsonStr
+     * @return
+     * @throws IOException
+     */
     public int postMethodCall(String api, String jsonStr) throws IOException {
         int responseCode;
         String responseMessage = "", responseMethod = "";
@@ -86,21 +101,30 @@ public class ApiMethods {
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));
             String inputLine;
-            StringBuilder responseBuffer = new StringBuilder();
+            StringBuilder response = new StringBuilder();
 
             while ((inputLine = in.readLine()) != null) {
-                responseBuffer.append(inputLine);
+                response.append(inputLine);
             }
             in.close();
             // print result
-            System.out.println("POST Response Code: " + responseCode);
-            System.out.println("POST Response--> " + responseBuffer.toString());
+            System.out.println("GET Response Code: " + responseCode);
+            System.out.println("GET Response message: " + responseMessage);
+            System.out.println("Response-->" + response.toString());
         } else {
             System.out.println("POST request not worked--> " + "POST Response Message = " + responseMessage + ", POST Response Method = " + responseMethod);
         }
         return responseCode;
     }
 
+    /**
+     * The PATCH method call, calls the api and returns the status code.
+     *
+     * @param api
+     * @param jsonStr
+     * @return
+     * @throws IOException
+     */
     public int patchMethodCall(String api, String jsonStr) throws IOException {
         int responseCode;
         String responseMessage = "", responseMethod = "";
@@ -135,8 +159,9 @@ public class ApiMethods {
                 response.append(inputLine);
             }
             in.close();
-            System.out.println("PATCH Response Code = " + responseCode);
-            System.out.println("PATCH Response--> " + response.toString());
+            System.out.println("PATCH Response Code: " + responseCode);
+            System.out.println("PATCH Response message: " + responseMessage);
+            System.out.println("PATCH-->" + response.toString());
         } else {
             System.out.println("PATCH request not worked--> " + "PATCH Response Message = " + responseMessage + ", PATCH Response Method = " + responseMethod);
         }
@@ -160,6 +185,14 @@ public class ApiMethods {
         }
     }
 
+    /**
+     * The PUT method call, calls the api and returns the status code.
+     *
+     * @param api
+     * @param jsonStr
+     * @return
+     * @throws IOException
+     */
     public int putMethodCall(String api, String jsonStr) throws IOException {
         int responseCode;
         String responseMessage = "", responseMethod = "";
@@ -185,14 +218,22 @@ public class ApiMethods {
                 response.append(inputLine);
             }
             in.close();
-            System.out.println("PUT Response--> " + response.toString());
-            System.out.println("PUT Response code--> " + httpCon.getResponseCode());
+            System.out.println("PUT Response Code: " + responseCode);
+            System.out.println("PUT Response message: " + responseMessage);
+            System.out.println("PUT-->" + response.toString());
         } else {
             System.out.println("PUT request not worked--> " + "PUT Response Message = " + responseMessage + ", PUT Response Method = " + responseMethod);
         }
         return responseCode;
     }
 
+    /**
+     * The DELETE method call, calls the api and returns the status code.
+     *
+     * @param api
+     * @return
+     * @throws IOException
+     */
     public int deleteMethodCall(String api) throws IOException {
         int responseCode;
         String responseMessage = "", responseMethod = "";
@@ -210,6 +251,9 @@ public class ApiMethods {
         responseCode = httpCon.getResponseCode();
         responseMessage = httpCon.getResponseMessage();
         responseMethod = httpCon.getRequestMethod();
+
+        System.out.println("DELETE Response Code: " + responseCode);
+        System.out.println("DELETE Response message: " + responseMessage);
 
         if (responseCode != HttpURLConnection.HTTP_OK) {
             System.out.println("DELETE request not worked--> " + "DELETE Response Message = " + responseMessage + ", DELETE Response Method = " + responseMethod);

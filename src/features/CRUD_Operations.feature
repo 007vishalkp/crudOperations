@@ -8,11 +8,11 @@ Feature: CRUD operations
     When A record is created "<status>"
     Then The response <code> is shown
     Examples:
-      | api  | status       | code |
-      | POST | successful   | 201  |
+      | api  | status     | code |
+      | POST | successful | 201  |
 #      | POST | unsuccessful | 500  | #No failure scenario since api is accepting null value.
 
-  @patchapicall
+  @putapicall
   Scenario Outline: Updating an existing record in the database.
     Given We have the "<api>" url
     When A <record> is updated "<status>"

@@ -20,7 +20,8 @@ import io.cucumber.testng.CucumberOptions;
         //mvn clean -D'cucumber.options=--glue Steps_Android' -DargLine='-Dplatform="android"' test //for android app
         features = {"src/features/"},
         glue = "steps",
-        plugin = {"json:target/cucumber-report/cucumber.json"},
+//        plugin = {"json:target/cucumber-report/cucumber.json"},
+        plugin = {"pretty", "html:target/cucumber-reports"},
         monochrome = true,
 
         tags = "@CRUDoperations"

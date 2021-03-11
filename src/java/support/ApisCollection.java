@@ -4,6 +4,9 @@ import cucumber.api.java.hu.Ha;
 
 import java.util.HashMap;
 
+/**
+ * This class has all the apis in one place in a map structure.
+ */
 public class ApisCollection {
     private static HashMap<String, String> API_URLS = null;
     private static final String POST_API = "post";
